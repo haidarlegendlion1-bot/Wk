@@ -1,0 +1,18 @@
+def sum_even_numbers(limit: int) -> int:
+    """يحسب مجموع الأعداد الزوجية من 0 حتى الرقم المحدد (شاملاً)."""
+    if limit < 0:
+        raise ValueError("يجب أن يكون الرقم أكبر من أو يساوي الصفر.")
+    return sum(num for num in range(0, limit + 1, 2))
+
+
+def main() -> None:
+    try:
+        user_input = int(input("أدخل رقماً موجباً: "))
+        total = sum_even_numbers(user_input)
+        print(f"مجموع الأعداد الزوجية حتى {user_input} هو: {total}")
+    except ValueError as error:
+        print(f"خطأ في الإدخال: {error}")
+
+
+if __name__ == "__main__":
+    main()
